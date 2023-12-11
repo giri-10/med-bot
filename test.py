@@ -1,0 +1,18 @@
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    # This is the default and can be omitted
+    api_key='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'
+)
+
+chat_completion = client.chat.completions.create(
+    messages=[
+        {
+            "role": "user",
+            "content": "Say this is a test",
+        }
+    ],
+    model="gpt-3.5-turbo",
+)
+print(chat_completion)
